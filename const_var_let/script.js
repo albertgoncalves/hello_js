@@ -4,16 +4,35 @@
 // initializing it to a value.
 let x = 1;
 
+console.log('ground floor');
+console.log(x);
+
 if (x === 1) {
     // Attempting to retrieve a value for x here will return ReferenceError.
     // console.log(x);
 
     let x = 2;
 
+    console.log('1 level down');
     console.log(x);
     // expected output: 2
+
+    if (x !== 1) {
+        let x = 3;
+
+        console.log('2 levels down');
+        console.log(x);
+    }
+
+    if (x === 2) {
+        console.log(
+            'if there is no new value for x, sadly there is inheritance'
+        );
+        console.log(x);
+    }
 }
 
+console.log('back to ground floor');
 console.log(x);
 // expected output: 1
 
