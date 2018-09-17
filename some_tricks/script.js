@@ -1,23 +1,23 @@
 /*jshint esversion: 6 */
 
+// https://medium.freecodecamp.org/9-neat-javascript-tricks-e2742f2735c3
+
 const arr1 = [11, 22, 33, 44, 55, 66];
 console.log(arr1);
 
 // truncate array
-var arr2 = arr1;
+var arr2    = arr1;
 arr2.length = 3;
 console.log(arr2);
 
-var arr3 = arr1;
+var arr3    = arr1;
 arr3.length = 0;
 console.log(arr3);
 
 // assign new variables via object unpacking
-const csvLike = '1997,John Doe,US,john@doe.com,New York';
-const {
-    2: country,
-    4: state
-} = csvLike.split(',');
+const csvLike    = '1997,John Doe,US,john@doe.com,New York';
+const {2: country,
+       4: state} = csvLike.split(',');
 console.log(csvLike);
 console.log(country);
 console.log(state  );
@@ -25,6 +25,7 @@ console.log(state  );
 // ES2015 with the spread operator can be used to remove duplicate items from
 // given array
 const removeDuplicateItems = arr => [...new Set(arr)];
+
 const someDupes = [42, 'foo', 42, 'foo', true, true];
 const noDupes   = removeDuplicateItems(someDupes);
 console.log(someDupes);

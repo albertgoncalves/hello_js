@@ -21,8 +21,8 @@ const kwdLower  = keywords.map((kw) => (kw.toLowerCase()));
 var currentWord = '';
 
 window.onkeydown = function(e) {
-    let keyCode = e.keyCode ? e.keyCode : e.which;
-    let key = keysFlip[keyCode];
+    let keyCode  = e.keyCode ? e.keyCode : e.which;
+    let key      = keysFlip[keyCode];
 
     if (key === 'enter') {
         if (kwdLower.indexOf(currentWord) >= 0) {
