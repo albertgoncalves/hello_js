@@ -1,0 +1,30 @@
+html, body {
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+#squares_box {
+    position: absolute;
+    top: 0px;
+    left: 15%;
+    right: 15%;
+    width: 70%;
+    background: rgba(241, 241, 241, .45);
+}
+
+.text {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    padding-left: 15px;
+    padding-right: 10px;
+    opacity: .75;
+    font-size: 9px;
+    background: rgba(255, 255, 255, .3);
+    text-align: right;
+}
