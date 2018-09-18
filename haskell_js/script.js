@@ -88,4 +88,5 @@ console.log(array2list (list2array (myList )));
 console.log(array2list ("Hello!"));
 console.log(list2array (range (1) (10)));
 console.log(list2array (map ((x) => addArrow (1) (x)) (range (1) (10))));
+console.log(list2array (map (addArrow (1))            (range (1) (10))));
 console.log(list2array (map (fizzbuzz)                (range (1) (20))));
