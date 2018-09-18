@@ -75,7 +75,7 @@ var myList = pair (1) (
                 );
 var myArray = [1, 2, 3];
 
-console.log(add       (1) (2));
+console.log(add      (1) (2));
 console.log(addArrow (1) (2));
 console.log(myPair);
 console.log(myList);
@@ -88,4 +88,4 @@ console.log(array2list (list2array (myList )));
 console.log(array2list ("Hello!"));
 console.log(list2array (range (1) (10)));
 console.log(list2array (map ((x) => addArrow (1) (x)) (range (1) (10))));
-console.log(list2array (map (fizzbuzz)                 (range (1) (20))));
+console.log(list2array (map (fizzbuzz)                (range (1) (20))));
