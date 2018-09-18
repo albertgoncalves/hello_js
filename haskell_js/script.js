@@ -5,7 +5,7 @@
 // http://jshint.com/docs/
 // global-like syntax will disable specifc jshint warnings
 
-// to lint script and evaluate console logs (http://jshint.com/docs/cli/)
+// to lint script and evaluate console output (http://jshint.com/docs/cli/)
 // $ jshint --verbose script.js
 // $ node script.js
 
