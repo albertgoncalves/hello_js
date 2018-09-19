@@ -75,7 +75,7 @@ const foldl = (z) => (f) => (xs) =>
                 : f (foldl (z) (f) (snd (xs))) (fst (xs));
 
 const foldlFromFoldr = (z) => (f) => (xs) =>
-    foldr (z) (flip (f)) (reverse (xs));
+    foldr (z) (flip (f)) (xs);
 
 const foldrFromFoldl = (z) => (f) => (xs) =>
     foldl (z) (flip (f)) (xs);
@@ -87,6 +87,12 @@ const rev     = (xs) => (a) =>
 
 // flip :: (a -> b -> c) -> b -> a -> c
 const flip = (f) => (x) => (y) => f (y) (x);
+
+const foldlFromFoldr2 = (z) => (f) => (xs) =>
+    foldr (z) (flip (f)) (reverse (xs));
+
+const foldrFromFoldl2 = (z) => (f) => (xs) =>
+    foldl (z) (flip (f)) (reverse (xs));
 
 // MAIN
 
@@ -122,3 +128,12 @@ console.log(foldl (2) (subtract) (array2list (myArray)));
 console.log(foldrFromFoldl (2) (subtract) (array2list (myArray)));
 console.log(foldlFromFoldr (2) (subtract) (array2list (myArray)));
 console.log(foldr (2) (subtract) (range (0) (100)));
+
+let xs = array2list("Hello!");
+
+console.log(foldl ("_") (addArrow) (xs));
+console.log(foldr ("_") (addArrow) (xs));
+console.log(foldlFromFoldr ("_") (addArrow) (xs));
+console.log(foldrFromFoldl ("_") (addArrow) (xs));
+console.log(foldlFromFoldr2 ("_") (addArrow) (xs));
+console.log(foldrFromFoldl2 ("_") (addArrow) (xs));
