@@ -57,7 +57,7 @@ const map = (f) => (xs) =>
                 : pair (f (fst (xs))) (map (f) (snd (xs)));
 
 const fizzbuzz = (n) =>
-    // via Chrome dev console:
+    // via dev console:
         // >  '' || 5
         // <- 5
         // >  'Hello!' || 5

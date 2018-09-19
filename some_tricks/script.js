@@ -1,4 +1,4 @@
-/*jshint esversion: 6 */
+/* jshint esversion: 6 */
 
 // https://medium.freecodecamp.org/9-neat-javascript-tricks-e2742f2735c3
 
@@ -35,14 +35,16 @@ console.log(noDupes  );
 const nestedArr = [11, [22, 33], [44, 55], 66];
 const flatArr   = [].concat(...nestedArr);
 console.log(nestedArr);
-console.log(flatArr );
+console.log(flatArr  );
 
 // this will only work with bidimensional arrays -- with recursion we can go
 // deeper
 function flattenArray(arr) {
     let flattened = [].concat(...arr);
-    return flattened.some(item => Array.isArray(item)) ?
-        flattenArray(flattened) : flattened;
+    return (
+        flattened.some(item => Array.isArray(item)) ? flattenArray(flattened)
+                                                    : flattened
+    );
 }
 
 // this above function works by checking if any item within the given array
@@ -65,9 +67,9 @@ const fib = (x) =>
                          : fib(x - 1) + fib(x - 2);
 console.log(fib (10));
 
-var string1 = "";
+var string1   = "";
 const object1 = [1, 2, 3];
 for (let property1 in object1) {
-  string1 = string1 + object1[property1];
+    string1 = string1 + object1[property1];
 }
 console.log(string1);
