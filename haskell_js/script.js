@@ -19,10 +19,8 @@ const addArrow = (a) => (b) => a + b;
 const subtract = (a) => (b) => a - b;
 
 const pair = (first) => (second) => {
-    return {
-        first : first,
-        second: second
-    };
+    return {'first' : first,
+            'second': second};
 };
 
 const fst = (p) => p.first;
@@ -52,7 +50,7 @@ function array2list (arrayLike) {
 
 const range = (low) => (high) =>
     low > high ? null
-               : pair (low) (range(low+1)(high));
+               : pair (low) (range (low + 1) (high));
 
 const map = (f) => (xs) =>
     xs === null ? null
@@ -87,7 +85,6 @@ const rev     = (xs) => (a) =>
     xs === null ? a
                 : rev (snd (xs)) (pair (fst (xs)) (a));
 
-
 // flip :: (a -> b -> c) -> b -> a -> c
 const flip = (f) => (x) => (y) => f (y) (x);
 
@@ -98,7 +95,8 @@ let myList = pair (1) (
                     pair (3) (null)
                     )
                 );
-let myArray = [1, 2, 3, 4];
+let myArray = [1, 2, 3, 4, 5, 6];
+// let myArray = 'Hello!';
 
 console.log(add      (1) (2));
 console.log(addArrow (1) (2));
@@ -123,3 +121,4 @@ console.log(foldr (2) (subtract) (array2list (myArray)));
 console.log(foldl (2) (subtract) (array2list (myArray)));
 console.log(foldrFromFoldl (2) (subtract) (array2list (myArray)));
 console.log(foldlFromFoldr (2) (subtract) (array2list (myArray)));
+console.log(foldr (2) (subtract) (range (0) (100)));
