@@ -76,6 +76,21 @@ const foldl = (z) => (f) => (xs) =>
     xs === null ? z
                 : f (foldl (z) (f) (snd (xs))) (fst (xs));
 
+const foldlFromFoldr = (z) => (f) => (xs) =>
+    foldr (z) (flip (f)) (reverse (xs));
+
+const foldrFromFoldl = (z) => (f) => (xs) =>
+    foldl (z) (flip (f)) (xs);
+
+const reverse = (xs) => rev (xs) (null);
+const rev     = (xs) => (a) =>
+    xs === null ? a
+                : rev (snd (xs)) (pair (fst (xs)) (a));
+
+
+// flip :: (a -> b -> c) -> b -> a -> c
+const flip = (f) => (x) => (y) => f (y) (x);
+
 // MAIN
 
 let myList = pair (1) (
@@ -96,10 +111,15 @@ console.log(list2array (array2list (myArray)));
 console.log(array2list (list2array (myList )));
 console.log(array2list ("Hello!"));
 console.log(list2array (range (1) (10)));
-console.log(list2array (map ((x) => addArrow (1) (x)) (range (1) (10))));
+console.log(list2array (map ((x) => addArrow (x) (1)) (range (1) (10))));
 console.log(list2array (map (addArrow (1))            (range (1) (10))));
 console.log(list2array (map (fizzbuzz)                (range (1) (20))));
-console.log(foldr (1) (add)      (array2list (myArray)));
-console.log(foldl (1) (add)      (array2list (myArray)));
-console.log(foldr (1) (subtract) (array2list (myArray)));
-console.log(foldl (1) (subtract) (array2list (myArray)));
+console.log(subtract (1) (2));
+console.log(flip (subtract) (1) (2));
+console.log(list2array (reverse (array2list (myArray))));
+console.log(foldr (1) (addArrow) (array2list (myArray)));
+console.log(foldl (1) (addArrow) (array2list (myArray)));
+console.log(foldr (2) (subtract) (array2list (myArray)));
+console.log(foldl (2) (subtract) (array2list (myArray)));
+console.log(foldrFromFoldl (2) (subtract) (array2list (myArray)));
+console.log(foldlFromFoldr (2) (subtract) (array2list (myArray)));
