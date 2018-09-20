@@ -94,6 +94,12 @@ const foldlFromFoldr2 = (z) => (f) => (xs) =>
 const foldrFromFoldl2 = (z) => (f) => (xs) =>
     foldl (z) (flip (f)) (reverse (xs));
 
+const loop = (f) => (x) => (n) =>
+    n <= 0 ? x
+           : f (loop (f) (x) (n - 1));
+
+
+
 // MAIN
 
 let myList = pair (1) (
@@ -137,3 +143,4 @@ console.log(foldlFromFoldr ("_") (addArrow) (xs));
 console.log(foldrFromFoldl ("_") (addArrow) (xs));
 console.log(foldlFromFoldr2 ("_") (addArrow) (xs));
 console.log(foldrFromFoldl2 ("_") (addArrow) (xs));
+console.log(loop (subtract (1)) (10) (20));
