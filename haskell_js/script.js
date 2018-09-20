@@ -74,11 +74,8 @@ const foldl = (z) => (f) => (xs) =>
     xs === null ? z
                 : f (foldl (z) (f) (snd (xs))) (fst (xs));
 
-const foldlFromFoldr = (z) => (f) => (xs) =>
-    foldr (z) (flip (f)) (xs);
-
-const foldrFromFoldl = (z) => (f) => (xs) =>
-    foldl (z) (flip (f)) (xs);
+const foldlFromFoldr = (z) => (f) => (xs) => foldr (z) (flip (f)) (xs);
+const foldrFromFoldl = (z) => (f) => (xs) => foldl (z) (flip (f)) (xs);
 
 const reverse = (xs) => rev (xs) (null);
 const rev     = (xs) => (a) =>
@@ -94,51 +91,56 @@ const foldlFromFoldr2 = (z) => (f) => (xs) =>
 const foldrFromFoldl2 = (z) => (f) => (xs) =>
     foldl (z) (flip (f)) (reverse (xs));
 
-const loop = (f) => (x) => (n) =>
-    n <= 0 ? x
-           : f (loop (f) (x) (n - 1));
+const loop = (f) => (x) => (n) => n <= 0 ? x
+                                         : f (loop (f) (x) (n - 1));
 
 // MAIN
 
-let myList = pair (1) (
-                pair (2) (
-                    pair (3) (null)
-                    )
-                );
 let myArray = [1, 2, 3, 4, 5, 6];
-// let myArray = 'Hello!';
+let xs      = array2list("Hello!");
+let myList  = pair (1) (
+                 pair (2) (
+                     pair (3) (null)
+                     )
+                 );
 
-console.log(add      (1) (2));
-console.log(addArrow (1) (2));
-console.log(myList);
-console.log(fst (myList));
-console.log(snd (myList));
-console.log(array2list (myArray));
-console.log(list2array (myList ));
-console.log(list2array (array2list (myArray)));
-console.log(array2list (list2array (myList )));
-console.log(array2list ("Hello!"));
-console.log(list2array (range (1) (10)));
-console.log(list2array (map ((x) => addArrow (x) (1)) (range (1) (10))));
-console.log(list2array (map (addArrow (1))            (range (1) (10))));
-console.log(list2array (map (fizzbuzz)                (range (1) (20))));
-console.log(subtract (1) (2));
-console.log(flip (subtract) (1) (2));
-console.log(list2array (reverse (array2list (myArray))));
-console.log(foldr (1) (addArrow) (array2list (myArray)));
-console.log(foldl (1) (addArrow) (array2list (myArray)));
-console.log(foldr (2) (subtract) (array2list (myArray)));
-console.log(foldl (2) (subtract) (array2list (myArray)));
-console.log(foldrFromFoldl (2) (subtract) (array2list (myArray)));
-console.log(foldlFromFoldr (2) (subtract) (array2list (myArray)));
-console.log(foldr (2) (subtract) (range (0) (100)));
+let demos = [
+    add      (1) (2),
+    addArrow (1) (2),
+    myList,
+    fst (myList),
+    snd (myList),
+    array2list (myArray),
+    list2array (myList ),
+    list2array (array2list (myArray)),
+    array2list (list2array (myList )),
+    array2list ("Hello!"),
+    list2array (range (1) (10)),
+    list2array (map (addArrow (1))            (range (1) (10))),
+    list2array (map ((x) => addArrow (x) (1)) (range (1) (10))),
+    list2array (map (fizzbuzz)                (range (1) (20))),
+    subtract (1) (2),
+    flip (subtract) (1) (2),
+    list2array (reverse (array2list (myArray))),
+    foldr (1) (addArrow) (array2list (myArray)),
+    foldl (1) (addArrow) (array2list (myArray)),
+    foldr (2) (subtract) (array2list (myArray)),
+    foldl (2) (subtract) (array2list (myArray)),
+    foldrFromFoldl (2) (subtract) (array2list (myArray)),
+    foldlFromFoldr (2) (subtract) (array2list (myArray)),
+    foldl (2)   (subtract) (range (0) (100)),
+    foldr (2)   (subtract) (range (0) (100)),
+    foldl ("_") (addArrow) (xs),
+    foldr ("_") (addArrow) (xs),
+    foldlFromFoldr  ("_") (addArrow) (xs),
+    foldrFromFoldl  ("_") (addArrow) (xs),
+    foldlFromFoldr2 ("_") (addArrow) (xs),
+    foldrFromFoldl2 ("_") (addArrow) (xs),
+    loop (subtract (1)) (10) (20)
+];
 
-let xs = array2list("Hello!");
-
-console.log(foldl ("_") (addArrow) (xs));
-console.log(foldr ("_") (addArrow) (xs));
-console.log(foldlFromFoldr ("_") (addArrow) (xs));
-console.log(foldrFromFoldl ("_") (addArrow) (xs));
-console.log(foldlFromFoldr2 ("_") (addArrow) (xs));
-console.log(foldrFromFoldl2 ("_") (addArrow) (xs));
-console.log(loop (subtract (1)) (10) (20));
+demos.forEach(
+    (demo) => {
+        console.log(demo);
+    }
+);
