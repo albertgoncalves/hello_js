@@ -98,8 +98,6 @@ const loop = (f) => (x) => (n) =>
     n <= 0 ? x
            : f (loop (f) (x) (n - 1));
 
-
-
 // MAIN
 
 let myList = pair (1) (
