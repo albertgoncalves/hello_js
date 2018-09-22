@@ -1,4 +1,3 @@
-"use strict";
 // https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
 // $ tsc greeter_warning.ts
 function greeter(person) {
