@@ -58,9 +58,9 @@ console.log(flattenArray(deepArr));
 
 const range = (a) => (b) => Array.from(new Array(b), (x,i) => i + a);
 xs  = range (1) (5);
-xs2 = xs.map((x) => x + 1);
-console.log(xs);
-console.log(xs2);
+xss = xs.map((x) => x + 1);
+console.log(xs );
+console.log(xss);
 
 const fib = (x) =>
     (x === 0 || x === 1) ? x
