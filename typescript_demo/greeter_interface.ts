@@ -1,10 +1,6 @@
-/* tslint:disable: trailing-comma*/
-/* tslint:disable: typedef-whitespace */
-/* tslint:disable: interface-name*/
-
 // https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
 
-// $ tsc greeter_interface.ts
+// $ tslint greeter_interface.ts ; tsc greeter_interface.ts ; node greeter_interface.js
 
 interface Person { firstName: string;
                    lastName : string;

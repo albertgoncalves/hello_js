@@ -1,8 +1,6 @@
-/* tslint:disable: no-console */
-
 // https://www.typescriptlang.org/docs/handbook/basic-types.html
 
-// tsc array.ts ; node array.js
+// $ tslint array.ts ; tsc array.ts ; node array.js
 
 const numToArray = (a: number) => (b: number) => {
     const returnVar: number[] = [a, b];

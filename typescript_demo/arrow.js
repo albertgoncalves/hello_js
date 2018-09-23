@@ -7,7 +7,7 @@ var addPart = function (a) { return function (b) {
     return retVar;
 }; };
 var logs = [add(1, 2),
-    addPart(1)(2)
+    addPart(8)(2)
 ];
 logs.forEach(function (log) {
     console.log(log);
