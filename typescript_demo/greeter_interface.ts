@@ -1,9 +1,13 @@
+/* tslint:disable: trailing-comma*/
+/* tslint:disable: typedef-whitespace */
+/* tslint:disable: interface-name*/
+
 // https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
 
 // $ tsc greeter_interface.ts
 
-interface Person { firstName: string
-                   lastName : string
+interface Person { firstName: string;
+                   lastName : string;
                  }
 
 function greeter(person: Person) {
@@ -11,11 +15,11 @@ function greeter(person: Person) {
            + person.firstName
            + " "
            + person.lastName
-           )
+           );
 }
 
 let user = { firstName: "Jane"
            , lastName : "Doe"
-           }
+           };
 
-document.body.innerHTML = greeter(user)
+document.body.innerHTML = greeter(user);

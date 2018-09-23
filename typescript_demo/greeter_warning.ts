@@ -3,10 +3,10 @@
 // $ tsc greeter_warning.ts
 
 function greeter(person: string) {
-    return "Hello, " + person
+    return "Hello, " + person;
 }
 
 // let user = "Jane User" <- this would compile without warning
-let user = [0, 1, 2] //   <- this throws a warning (despite .js being created)
+let user = [0, 1, 2]; //   <- this throws a warning (despite .js being created)
 
-document.body.innerHTML = greeter(user)
+document.body.innerHTML = greeter(user);

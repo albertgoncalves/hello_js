@@ -1,3 +1,5 @@
+/* tslint:disable: no-console */
+/* tslint:disable: trailing-comma*/
 // $ tsc arrow.ts ; node arrow.js
 var add = function (a, b) { return a + b; };
 var addPart = function (a) { return function (b) {
