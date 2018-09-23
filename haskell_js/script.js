@@ -10,7 +10,6 @@
 // $ jshint --verbose script.js
 // $ node script.js
 
-
 (
     function () {
         'use strict';

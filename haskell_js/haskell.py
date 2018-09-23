@@ -11,11 +11,13 @@ def snd (p): return p['second']
 
 def add (a): return (lambda b: a + b)
 
-def range (low): return (lambda high: None if low > high
-                         else pair (low) (range (low + 1) (high)))
+def range (low): return ( lambda high: None if low > high
+                          else pair (low) (range (low + 1) (high))
+                        )
 
-def map (f): return (lambda xs: None if xs is None
-                     else pair (f (fst (xs))) (map (f) (snd (xs))))
+def map (f): return ( lambda xs: None if xs is None
+                      else pair (f (fst (xs))) (map (f) (snd (xs)))
+                    )
 
 def array2list (arrayLike):
     result = None
@@ -35,9 +37,10 @@ def list2array (xs):
 
     return result
 
-def fizzbuzz (n): return ('fizzbuzz' if n % 15 == 0 else (
-                          'fizz'     if n % 3  == 0 else (
-                          'buzz'     if n % 5  == 0 else n )))
+def fizzbuzz (n): return ( 'fizzbuzz' if n % 15 == 0 else (
+                           'fizz'     if n % 3  == 0 else (
+                           'buzz'     if n % 5  == 0 else n
+                         )))
 
 if __name__ == '__main__':
     myPair  = array2list([1, 2, 3])
