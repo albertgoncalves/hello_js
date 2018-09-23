@@ -2,12 +2,15 @@
 
 const add     = (a: number, b: number): number => a + b;
 const addPart = (a: number) => (b: number) => {
-    const retVar: number = a + b;
-    return retVar;
+    const retVal: number = a + b;
+    return retVal;
 };
+const addAlt: (baseValue: number, increment: number) => number =
+    (x, y) => x + y;
 
 let logs = [ add     (1,  2)
            , addPart (8) (2)
+           , addAlt  (3,  6)
            ];
 
 logs.forEach(
