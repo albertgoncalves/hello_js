@@ -3,8 +3,8 @@
 // tsc array.ts ; node array.js
 
 const numToArray = (a: number) => (b: number) => {
-    let returnArray: number[] = [a, b]
-    return returnArray;
-};
+    let returnVar: number[] = [a, b]
+    return returnVar
+}
 
-console.log(numToArray (1) (2));
+console.log(numToArray (1) (2))

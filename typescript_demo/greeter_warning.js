@@ -3,6 +3,6 @@
 function greeter(person) {
     return "Hello, " + person;
 }
-// let user = "Jane User"; <- this would compile without warning
+// let user = "Jane User" <- this would compile without warning
 var user = [0, 1, 2]; //   <- this throws a warning (despite .js being created)
 document.body.innerHTML = greeter(user);

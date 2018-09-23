@@ -1,4 +1,5 @@
 /* jshint esversion: 6 */
+/* jshint -W014 */
 
 // https://medium.com/dailyjs/functional-js-with-es6-recursive-patterns-b7d0813ef9e3
 
@@ -51,10 +52,10 @@
         const map = ([x, ...xs], fn) => def(x) ? [fn(x), ...map(xs, fn)]
                                                : [];
 
-        const swap = (a, i, j) => (map(a, (x) => {if(x === i) return a[j];
-                                                  if(x === j) return a[i];
-                                                  return x;
-                                                  }));
+        const swap = (a, i, j) => (map(a, (x) => { if(x === i) return a[j];
+                                                   if(x === j) return a[i];
+                                                   return x;
+                                                   }));
 
         const filter = ([x, ...xs], fn) =>
             def(x) ? fn(x) ? [x, ...filter(xs, fn)]
@@ -114,11 +115,11 @@
                                  : 1;
 
         const quicksort = (xs) =>
-            lengthReduce(xs) ? flatten(
-                              [quicksort(filter(tail(xs), x => x <= head(xs))),
-                               head(xs),
-                               quicksort(filter(tail(xs), x => x >  head(xs)))]
-                             )
+            lengthReduce(xs) ?
+                     flatten([ quicksort(filter(tail(xs), x => x <= head(xs)))
+                             , head(xs)
+                             , quicksort(filter(tail(xs), x => x >  head(xs)))
+                             ])
                              : [];
 
         const reverseReduce = (xs) =>
@@ -178,9 +179,10 @@
         const percentToDec   = partial(reverseDivide, 100);
         const product        = {price: 15};
         const getPrice       = partial(pluck, 'price');
-        const products       = [{price: 10},
-                                {price: 5 },
-                                {price: 1 }];
+        const products       = [ {price: 10}
+                               , {price: 5 }
+                               , {price: 1 }
+                               ];
         const discount       = (x) => x * 0.9;
         const tax            = (x) => x + (x * 0.075);
         const flowFinalPrice = flow(getPrice, discount, tax);

@@ -1,4 +1,5 @@
 /* jshint esversion: 6 */
+/* jshint -W014 */
 
 // https://www.youtube.com/watch?v=pUN3algpvMs
 
@@ -24,8 +25,9 @@
         const subtract = (a) => (b) => a - b;
 
         const pair = (first) => (second) => {
-            return {'first' : first,
-                    'second': second};
+            return { 'first' : first
+                   , 'second': second
+                   };
         };
 
         const fst = (p) => p.first;

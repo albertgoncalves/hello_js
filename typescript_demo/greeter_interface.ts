@@ -2,8 +2,8 @@
 
 // $ tsc greeter_interface.ts
 
-interface Person { firstName: string;
-                   lastName : string;
+interface Person { firstName: string
+                   lastName : string
                  }
 
 function greeter(person: Person) {
@@ -11,11 +11,11 @@ function greeter(person: Person) {
            + person.firstName
            + " "
            + person.lastName
-           );
+           )
 }
 
 let user = { firstName: "Jane"
            , lastName : "Doe"
-           };
+           }
 
-document.body.innerHTML = greeter(user);
+document.body.innerHTML = greeter(user)
