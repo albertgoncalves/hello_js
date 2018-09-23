@@ -2,7 +2,7 @@
 
 const add     = (a: number, b: number): number => a + b;
 const addPart = (a: number) => (b: number) => {
-    const retVal: number = a + b;
+    const  retVal: number = a + b;
     return retVal;
 };
 const addAlt: (baseValue: number, increment: number) => number =
