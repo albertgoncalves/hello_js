@@ -22,13 +22,13 @@ var B = {
 let and = (x, y) => x(y, False);
 let or  = (x, y) => x(True, y );
 
-console.log(and (True,  True ) ('True', 'False'));
-console.log(and (True,  False) ('True', 'False'));
+console.log(and (True , True ) ('True', 'False'));
+console.log(and (True , False) ('True', 'False'));
 console.log(and (False, True ) ('True', 'False'));
 console.log(and (False, False) ('True', 'False'));
 
-console.log(and (True,  True ) ('True', 'False'));
-console.log(and (True,  False) ('True', 'False'));
+console.log(and (True , True ) ('True', 'False'));
+console.log(and (True , False) ('True', 'False'));
 console.log(and (False, True ) ('True', 'False'));
 console.log(and (False, False) ('True', 'False'));
 

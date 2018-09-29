@@ -35,9 +35,10 @@ window.onkeydown = function(e) {
         currentWord += ' ';
         assignInput(currentWord);
 
-    } else if ((key === 'backspace') ||
-               (key === 'delete')    ||
-               (key === 'esc')) {
+    } else if ( (key === 'backspace') ||
+                (key === 'delete')    ||
+                (key === 'esc')
+              ) {
         assignKeywd('');
         currentWord = '';
         assignInput(currentWord);
