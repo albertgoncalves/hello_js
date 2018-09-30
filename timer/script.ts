@@ -43,7 +43,8 @@ const startTimer = (id: string, deadline: number) => {
                     }
                 }
             }
-        }, 1000);
+        }, 1000
+    );
 };
 
 const animateClock = (span) => {
