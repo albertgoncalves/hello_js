@@ -1,5 +1,6 @@
 // $ tslint script.ts ; tsc script.ts
 var startTimer = function (id, deadline) {
+    var interval = 1000; // every second
     var timerInterval = setInterval(function () {
         var clock = document.getElementById(id);
         var timer = updateTimer(deadline);
@@ -16,21 +17,22 @@ var startTimer = function (id, deadline) {
             animateClock(spans[3]);
             if (timer.seconds === 59) {
                 animateClock(spans[2]);
-                if (timer.minutes === 59) {
-                    animateClock(spans[1]);
-                    if (timer.hours === 23) {
-                        animateClock(spans[0]);
-                    }
-                }
+            }
+            if (timer.minutes === 59) {
+                animateClock(spans[1]);
+            }
+            if (timer.hours === 23) {
+                animateClock(spans[0]);
             }
         }
-    }, 1000);
+    }, interval);
 };
 var animateClock = function (span) {
+    var interval = 500;
     span.className = "turn";
     setTimeout(function () {
         span.className = "";
-    }, 500);
+    }, interval);
 };
 var updateTimer = function (deadline) {
     var now = +new Date(); // '+' coerce Date() to 'number'

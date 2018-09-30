@@ -15,6 +15,7 @@ interface Time { days    : number;
                }
 
 const startTimer = (id: string, deadline: number) => {
+    const interval = 1000; // every second
 
     const timerInterval = setInterval(
         () => {
@@ -33,26 +34,22 @@ const startTimer = (id: string, deadline: number) => {
                 const spans = clock.getElementsByTagName("span");
 
                 animateClock(spans[3]);
-                if (timer.seconds === 59) {
-                    animateClock(spans[2]);
-                    if (timer.minutes === 59) {
-                        animateClock(spans[1]);
-                        if (timer.hours === 23) {
-                            animateClock(spans[0]);
-                        }
-                    }
-                }
+                if (timer.seconds === 59) { animateClock(spans[2]); }
+                if (timer.minutes === 59) { animateClock(spans[1]); }
+                if (timer.hours   === 23) { animateClock(spans[0]); }
             }
-        }, 1000
+        }, interval
     );
 };
 
 const animateClock = (span) => {
+    const interval = 500;
+
     span.className = "turn";
     setTimeout(
         () => {
             span.className = "";
-        }, 500
+        }, interval
     );
 };
 
