@@ -48,9 +48,11 @@ const startTimer = (id: string, deadline: number) => {
 
 const animateClock = (span) => {
     span.className = "turn";
-    setTimeout(() => {
-        span.className = "";
-    }, 500);
+    setTimeout(
+        () => {
+            span.className = "";
+        }, 500
+    );
 };
 
 const updateTimer = (deadline: number): Time => {
