@@ -20,27 +20,28 @@ const startTimer = (id: string, deadline: number) => {
         () => {
             const clock = document.getElementById(id);
             const timer = updateTimer(deadline);
-            clock.innerHTML = "<span>" + timer.days    + "</span>"
-                            + "<span>" + timer.hours   + "</span>"
-                            + "<span>" + timer.minutes + "</span>"
-                            + "<span>" + timer.seconds + "</span>";
-
-            const spans = clock.getElementsByTagName("span");
-
-            animateClock(spans[3]);
-            if (timer.seconds === 59) {
-                animateClock(spans[2]);
-                if (timer.minutes === 59) {
-                    animateClock(spans[1]);
-                    if (timer.hours === 23) {
-                        animateClock(spans[0]);
-                    }
-                }
-            }
 
             if (timer.mseconds < 1) {
                 clock.innerHTML = "<span>0</span>".repeat(4);
                 clearInterval(timerInterval);
+            } else {
+                clock.innerHTML = "<span>" + timer.days    + "</span>"
+                                + "<span>" + timer.hours   + "</span>"
+                                + "<span>" + timer.minutes + "</span>"
+                                + "<span>" + timer.seconds + "</span>";
+
+                const spans = clock.getElementsByTagName("span");
+
+                animateClock(spans[3]);
+                if (timer.seconds === 59) {
+                    animateClock(spans[2]);
+                    if (timer.minutes === 59) {
+                        animateClock(spans[1]);
+                        if (timer.hours === 23) {
+                            animateClock(spans[0]);
+                        }
+                    }
+                }
             }
         }, 1000);
 };
@@ -53,17 +54,17 @@ const animateClock = (span) => {
 };
 
 const updateTimer = (deadline: number): Time => {
-    const now           = +new Date(); // '+' coerce Date() to 'number'
-    const timeRemaining = deadline - now;
-    const seconds       = timeRemaining / 1000;
-    const minutes       = seconds       /   60;
-    const hours         = minutes       /   60;
-    const days          = hours         /   24;
+    const now      = +new Date(); // '+' coerce Date() to 'number'
+    const mseconds = deadline - now;
+    const seconds  = mseconds / 1000;
+    const minutes  = seconds  /   60;
+    const hours    = minutes  /   60;
+    const days     = hours    /   24;
     return { days    : Math.floor(days)
            , hours   : Math.floor(hours)   % 24
            , minutes : Math.floor(minutes) % 60
            , seconds : Math.floor(seconds) % 60
-           , mseconds: timeRemaining
+           , mseconds
            };
 };
 
