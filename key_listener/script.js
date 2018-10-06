@@ -14,7 +14,7 @@ function assignToId(id, keyword) {
 
 const keywords  = ['Yes', 'No'];
 const kwdLower  = keywords.map((kw) => (kw.toLowerCase()));
-var currentWord = '';
+let currentWord = '';
 
 window.onkeydown = function(e) {
     let keyCode = e.keyCode ? e.keyCode
