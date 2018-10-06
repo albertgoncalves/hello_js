@@ -1,4 +1,4 @@
-// $ tslint script.ts ; tsc script.ts
+// $ tslint script.ts; tsc script.ts;
 var startTimer = function (id, deadline) {
     var interval = 1000; // every second
     var timerInterval = setInterval(function () {
@@ -50,6 +50,6 @@ var updateTimer = function (deadline) {
 };
 // MAIN
 window.onload = function () {
-    var deadline = +new Date("September 30, 2018, 22:02:30");
+    var deadline = +new Date("October 30, 2018, 22:02:30");
     startTimer("clock", deadline);
 };

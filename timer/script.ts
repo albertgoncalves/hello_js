@@ -1,4 +1,4 @@
-// $ tslint script.ts ; tsc script.ts
+// $ tslint script.ts; tsc script.ts;
 
 // via https://www.youtube.com/watch?v=9bOlAFoFy0A
 // via https://github.com/Microsoft/TypeScript/issues/5710
@@ -71,6 +71,6 @@ const updateTimer = (deadline: number): Time => {
 // MAIN
 
 window.onload = () => {
-    const deadline = +new Date("September 30, 2018, 22:02:30");
+    const deadline = +new Date("October 30, 2018, 22:02:30");
     startTimer("clock", deadline);
 };

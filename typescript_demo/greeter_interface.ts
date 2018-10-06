@@ -1,6 +1,8 @@
 // https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
 
-// $ tslint greeter_interface.ts ; tsc greeter_interface.ts ; node greeter_interface.js
+// $ tslint greeter_interface.ts; tsc greeter_interface.ts;
+
+declare var document : Document;
 
 interface Person { firstName: string;
                    lastName : string;

@@ -1,4 +1,4 @@
-// $ tslint arrow.ts ; tsc arrow.ts ; node arrow.js
+// $ tslint arrow.ts; tsc arrow.ts; node arrow.js;
 var add = function (a, b) { return a + b; };
 var addPart = function (a) { return function (b) {
     var retVal = a + b;
