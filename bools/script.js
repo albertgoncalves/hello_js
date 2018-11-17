@@ -35,4 +35,4 @@ console.log(and (False, False) ('True', 'False'));
 and (B[true], B[!!'Hello, bool!']) (
     () => console.log('True' ),
     () => console.log('False')
-    ) ();
+) ();
