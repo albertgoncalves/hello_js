@@ -71,6 +71,6 @@ const updateTimer = (deadline: number): Time => {
 // MAIN
 
 window.onload = () => {
-    const deadline = +new Date("October 30, 2018, 22:02:30");
+    const deadline = +new Date("October 30, 2019, 22:02:30");
     startTimer("clock", deadline);
 };
